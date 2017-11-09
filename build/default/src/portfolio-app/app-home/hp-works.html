@@ -1,0 +1,49 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./hp-entry.html">
+<link rel="import" href="../global-styles.html">
+
+<dom-module id="hp-works">
+  <template>
+    <style include="global-styles">
+      :host {
+        display: block;
+        margin-top: 5%;
+      }
+    </style>
+    <h1>WORKS</h1>
+    <template is="dom-repeat" items="[[works]]">
+      <hp-entry entry="[[item]]"></hp-entry>
+    </template>
+
+  </template>
+
+  <script>
+
+    class HpWorks extends Polymer.Element {
+      static get is() { return 'hp-works'; }
+
+      ready() {
+        super.ready();
+        this.works = [
+          {
+            title: 'Film Planetarium',
+            description: 'A Visualization of the Relationship Between Directors and their Actors/Actresses',
+            path: 'film-planetarium'
+          },
+          {
+            title: 'Touching Stories',
+            description: 'A Tangible Exploration and Interaction with the Dutch Folktale Stories',
+            path: 'touching-stories'
+          },
+          {
+            title: 'CHI Playlist',
+            description: 'A Scheduling Tool with Video Previews for CHI Conference',
+            path: 'chi-playlist'
+          }
+        ];
+      }
+    }
+
+    window.customElements.define(HpWorks.is, HpWorks);
+  </script>
+</dom-module>

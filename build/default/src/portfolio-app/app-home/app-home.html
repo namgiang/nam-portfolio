@@ -1,0 +1,37 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./hp-header.html">
+<link rel="import" href="./hp-works.html">
+
+<dom-module id="app-home">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <div>
+      <hp-header></hp-header>
+      <div>
+        <hp-works></hp-works>
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+
+    class AppHome extends Polymer.Element {
+      static get is() { return 'app-home'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'app-home'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(AppHome.is, AppHome);
+  </script>
+</dom-module>

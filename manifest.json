@@ -1,0 +1,7 @@
+{
+  "name": "nam-portfolio",
+  "short_name": "nam-portfolio",
+  "description": "my personal portfolio web app",
+  "start_url": "/",
+  "display": "standalone"
+}

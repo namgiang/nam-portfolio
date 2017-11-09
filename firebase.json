@@ -1,0 +1,18 @@
+{
+  "hosting": {
+    "public": "build/default",
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/home",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "!{/bower_components,/src}/**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

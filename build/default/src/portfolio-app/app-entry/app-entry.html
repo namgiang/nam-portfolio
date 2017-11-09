@@ -1,0 +1,121 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../global-styles.html">
+
+<dom-module id="app-entry">
+  <template>
+    <style include="global-styles">
+      :host {
+        display: block;
+      }
+
+      h1 {
+        text-transform: uppercase;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      iframe {
+        width: 100%;
+        height: calc(50vw/1.8);
+        margin: 0;
+        padding: 0;
+      }
+
+      .methods > .item {
+        margin: 0;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      @media (max-width: 640px) {
+        iframe {
+          height: calc(95vw/1.8);
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 850px) {
+        iframe {
+          height: calc(75vw/1.8);
+        }
+      }
+    </style>
+    <iron-ajax url="src/public/data/contents.json" handle-as="json" last-response="{{entries}}" on-response="handleResponse" auto=""></iron-ajax>
+    <h1>[[currentEntry.title]]</h1>
+    <section id="content"></section>
+    <section class="methods">
+      <p><b>Methods:</b></p>
+      <template is="dom-repeat" items="[[currentEntry.methods]]">
+        <p class="item">[[item]]</p>
+      </template>
+    </section>
+    <section class="methods">
+      <p><b>Tools:</b></p>
+      <template is="dom-repeat" items="[[currentEntry.tech-tools]]">
+        <p class="item">[[item]]</p>
+      </template>
+    </section>
+  </template>
+
+  <script>
+
+    class AppEntry extends Polymer.Element {
+      static get is() { return 'app-entry'; }
+      static get properties() {
+        return {
+          name: String,
+          entries: {
+            type: Array
+          },
+          currentEntry: {
+            type: Object,
+            value: null
+          }
+        }
+      }
+
+      handleResponse() {
+        this.currentEntry = this.entries.find(entry => entry.id === this.name);
+        if (this.currentEntry) {
+          for (let item of this.currentEntry.content) {
+            if (item.type === 'text') {
+              let node = document.createElement('p');
+              node.innerHTML = item.text;
+              Polymer.dom(this.$.content).appendChild(node);
+            } else if (item.type === 'image') {
+              let imgNode = document.createElement('img');
+              imgNode.src = item.source;
+              let textNode = document.createElement('p');
+              textNode.classList.add('italic');
+              textNode.innerHTML = item.text;
+
+              Polymer.dom(this.$.content).appendChild(imgNode);
+              Polymer.dom(this.$.content).appendChild(textNode);
+            } else if (item.type === 'video') {
+              let node = document.createElement('iframe');
+              node.src = item.source;
+              node.setAttribute('allowfullscreen', '');
+              node.setAttribute('frameborder', 0);
+
+              let textNode = document.createElement('p');
+              textNode.classList.add('italic');
+              textNode.innerHTML = item.text;
+
+              Polymer.dom(this.$.content).appendChild(node);
+              Polymer.dom(this.$.content).appendChild(textNode);
+            }
+
+          }
+        }
+
+      }
+    }
+
+    window.customElements.define(AppEntry.is, AppEntry);
+  </script>
+</dom-module>

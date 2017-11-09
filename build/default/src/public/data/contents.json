@@ -1,0 +1,100 @@
+[
+  {
+    "id": "film-planetarium",
+    "title": "Film Planetarium",
+    "content": [
+      {
+        "type": "text",
+        "text": "As a movie lover, I asked myself the question: \"How does the collaboration between a director and an actor evolve over time?\" In my Data Visualization class, I had the opportunity to answer this question using visualization techiques. As a result, Film Planetarium was born."
+      },
+      {
+        "type": "text",
+        "text": "<b>Film Planetarium</b> is a visualization of the relationship between directors and their collaborated actors/actresses. The project showcases 18 prominent directors and their works between 1950 to 2014. The movies data is obtained through <a target=\"_blank\" href=\"http://www.omdbapi.com/\">OMDB API</a>."
+      },
+      {
+        "type": "image",
+        "source": "../../src/public/image/filmPlanetarium2.PNG",
+        "text": "Overview of all major directors. Each circle represents an actor (blue) or an actress (pink)"
+      },
+      {
+        "type": "image",
+        "source": "../../src/public/image/filmPlanetariumGif-3.gif",
+        "text": "<b>The view of one Director:</b> The more movies the actress features in a particular time range, the closer she is to the director. When users click on the actress circle, the movies in which she acted are highlighted."
+      },
+      {
+        "type": "image",
+        "source": "../../src/public/image/filmPlanetariumGif-2.gif",
+        "text": "Users can adjust the time range and see the relationships between the director and the actors/actresses evolve over time."
+      },
+      {
+        "type": "text",
+        "text": "<b>Approach:</b> I started the project by asking the question: How does the collaboration between a director and an actor evolve over time? With this question in mind, I apply the Data Visualization Techniques to design the interface and the interaction. After that, I developed the visualization app using <a target=\"_blank\" href=\"https://processing.org/\">Processing</a>."
+      }
+    ],
+    "methods": ["Data Visualization Technique", "Interactive Visualization Technique"],
+    "tech-tools": ["Processing", "React"]
+  },
+  {
+    "id": "touching-stories",
+    "title": "Touching Stories",
+    "content": [
+      {
+        "type": "text",
+        "text": "The <a target=\"_blank\" href=\"http://www.verhalenbank.nl/\">Meertens Instituut</a> in Amsterdam provide an online database of Dutch folktale stories to the public. These stories are collected throughout the Netherlands. Researchers have been using this database for their studies. Yet, the public audience is still not aware of this rich content of folk stories."
+      },
+      {
+        "type": "text",
+        "text": "<b>Touching Stories</b> is a visualization of Dutch folktale stories that allows the public to explore the folktale database on a touch table. It creates an engaging and fun experience when exploring these folktales. The target users are visitors at museums or public places where there is a touch table."
+      },
+      {
+        "type": "text",
+        "text": "I designed and developed the Microsoft Surface application by applying the user-centred design method with three iterations."
+      },
+      {
+        "type": "video",
+        "source": "https://player.vimeo.com/video/167264635",
+        "text": "<a target=\"_blank\" href=\"https://vimeo.com/167264635\">Touching Stories - A Tangible Exploration of the Dutch Folktale Database</a> created by Nam Giang, Lotte Kortbeek, and Simon Kreiser."
+      }
+    ],
+    "methods": ["User-centered Design", "User Study and Evaluation"],
+    "tech-tools": ["Microsoft Surface 2.0", "C#"]
+  },
+  {
+    "id": "chi-playlist",
+    "title": "CHI Playlist",
+    "content": [
+      {
+        "type": "text",
+        "text": "<a target=\"_blank\" href=\"https://chi2016.acm.org/wp/\">CHI Conference</a> offers 30-second <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=FuUdhQHMYiQ&list=PLqhXYFYmZ-Vcui07v-6-TXiETq3Zk7YTt\">video previews</a> of HCI papers. These videos provide visual information and help attendees at the conference to decide which keynote (presenting the paper) to attend. Video Previews also help authors to attract readers to their papers. Yet, there is no available tool which integrates this wealth of video content into the conference schedule."
+      },
+      {
+        "type": "text",
+        "text": "<b>CHI Playlist</b> presents video previews in time-based orders of the conference schedule. Attendees can organize their own programme, create and share playlists of video previews with others. The tool aims to reach a wider audience for video previews. At the same time, it is interesting to study how users appropriate the use of video-preview playlists."
+      },
+      {
+        "type": "text",
+        "text": "I conducted user studies, built paper prototypes, and helped developing the <a target=\"_blank\" href=\"http://chiplaylist.herokuapp.com/\"><i>web prototype</i></a> for <a target=\"_blank\" href=\"https://chi2016.acm.org/wp/\">CHI'16</a>."
+      },
+      {
+        "type": "image",
+        "source": "src/public/image/chiplaylist-jumpsession-gif.gif",
+        "text": "<b>A Snapshot of CHI Playlist:</b> Users navigate through the schedule."
+      },
+      {
+        "type": "text",
+        "text": "After CHI Playlist demo, we also redesigned and developed a different version for UIST Conference. You can checkout the video demo of UIST Video Browser below."
+      },
+      {
+        "type": "video",
+        "source": "https://player.vimeo.com/video/189198900",
+        "text": "<a target=\"_blank\" href=\"https://vimeo.com/189198900\">UIST Video Browser - A Video Preview Browsing and Scheduling tool for attendees at UIST'16</a> created by Carla Griggio, and Nam Giang."
+      },
+      {
+        "type": "text",
+        "text": "<b>Approach:</b> I designed and developed this app using the User-centred Design Method. I learnt about the scheduling experience of attendess in the past CHI Conferences. Then I made paper prototype of the app and tested it with users. I also helped with the development of the first MVP and tested it for CHI '16. Currently, I'm working on the mobile app for <a target=\"_blank\" href=\"https://uist.acm.org/uist2016/\">UIST'16</a>."
+      }
+    ],
+    "methods": ["User-centered Design", "User Study and Evaluation", "Interview Technique", "Questionnaire", "Usability Testing", "Rapid Iterative Testing and Evaluation"],
+    "tech-tools": ["HTML/CSS", "JavaScript", "Paper Prototype", "Ionic 2", "Git"]
+  }
+]
