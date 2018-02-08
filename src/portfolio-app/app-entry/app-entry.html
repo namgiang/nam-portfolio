@@ -37,7 +37,10 @@
       static get is() { return 'app-entry'; }
       static get properties() {
         return {
-          name: String,
+          name: {
+            type: String,
+            observer: '_activeChanged'
+          },
           entries: {
             type: Array
           },
@@ -48,7 +51,14 @@
         }
       }
 
+      _activeChanged() {
+        this.handleResponse();
+        scrollTo(0,0);
+      }
+
+
       handleResponse() {
+        Polymer.dom(this.$.content).innerHTML = '';
         this.currentEntry = this.entries.find(entry => entry.id === this.name);
         if (this.currentEntry) {
           for (let item of this.currentEntry.content) {
@@ -80,7 +90,6 @@
             }
           }
         }
-
       }
     }
 
