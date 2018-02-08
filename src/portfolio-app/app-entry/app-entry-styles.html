@@ -1,0 +1,44 @@
+<dom-module id="app-entry-styles">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      h1 {
+        text-transform: uppercase;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      iframe {
+        width: 100%;
+        height: calc(50vw/1.8);
+        margin: 0;
+        padding: 0;
+      }
+
+      .item {
+        margin: 0;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      @media (max-width: 640px) {
+        iframe {
+          height: calc(95vw/1.8);
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 850px) {
+        iframe {
+          height: calc(75vw/1.8);
+        }
+      }
+    </style>
+  </template>
+</dom-module>

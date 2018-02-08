@@ -1,0 +1,81 @@
+<dom-module id="hp-entry-styles">
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        margin: 5% 0;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .grid-hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        background: black;
+        opacity: 0;
+        margin: auto;
+        transition: all .2s ease-in;
+      }
+
+      .grid-hover:hover {
+        opacity: .7;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        position: absolute;
+        color: white;
+        font-weight: 900;
+        text-transform: uppercase;
+        top: 45%;
+        left: 5%;
+      }
+
+      p {
+        position: absolute;
+        color: white;
+        font-weight: 300;
+        top: 60%;
+        left: 5%;
+        right: 5%;
+      }
+
+      @media (min-width: 641px) and (max-width: 850px) {
+        .grid-hover {
+          opacity: .7;
+          height: 50%;
+        }
+
+        h1 {
+          top: 0;
+        }
+
+        p {
+          font-size: 1.2rem;
+          line-height: 2rem;
+          top: 30%;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .grid-hover {
+          opacity: .7;
+        }
+
+        h1 {
+          top: 12%;
+        }
+
+        p {
+          font-size: 1.2rem;
+          line-height: 2rem;
+          top: 36%;
+        }
+    </style>
+  </template>
+</dom-module>

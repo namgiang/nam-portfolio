@@ -1,7 +1,7 @@
 {
   "name": "nam-portfolio",
   "short_name": "nam-portfolio",
-  "description": "my personal portfolio web app",
+  "description": "Nam Han Giang's Portfolio",
   "start_url": "/",
   "display": "standalone"
 }

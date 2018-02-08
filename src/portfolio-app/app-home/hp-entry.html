@@ -1,88 +1,12 @@
 <link rel="import" href="../../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../global-styles.html">
+<link rel="import" href="./hp-entry-styles.html">
+
 <dom-module id="hp-entry">
   <template>
-    <style include="global-styles">
-      :host {
-        display: block;
-        position: relative;
-        margin: 5% 0;
-      }
+    <style include="global-styles"></style>
+    <style include="hp-entry-styles"></style>
 
-      img {
-        max-width: 100%;
-      }
-
-      .grid-hover {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-        background: black;
-        opacity: 0;
-        margin: auto;
-        -webkit-transition: all .2s ease-in;
-        -moz-transition: all .2s ease-in;
-        -ms-transition: all .2s ease-in;
-        -o-transition: all .2s ease-in;
-        transition: all .2s ease-in;
-      }
-
-      .grid-hover:hover {
-      	opacity: .7;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-        position: absolute;
-        color: white;
-        font-weight: 900;
-        text-transform: uppercase;
-        top: 45%;
-        left: 5%;
-      }
-
-      p {
-        position: absolute;
-        color: white;
-        font-weight: 300;
-        top: 60%;
-        left: 5%;
-        right: 5%;
-      }
-
-      @media (min-width: 641px) and (max-width: 850px) {
-        .grid-hover {
-          opacity: .7;
-          height: 50%;
-        }
-
-        h1 {
-          top: 0;
-        }
-
-        p {
-          font-size: 1.2rem;
-          line-height: 2rem;
-          top: 30%;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .grid-hover {
-          opacity: .7;
-        }
-
-        h1 {
-          top: 12%;
-        }
-
-        p {
-          font-size: 1.2rem;
-          line-height: 2rem;
-          top: 36%;
-        }
-    </style>
     <a href="[[rootPath]][[entry.path]]">
       <img src="../../src/public/image/[[entry.path]].png" alt="[[entry.title]]">
       <div class="grid-hover">
@@ -90,21 +14,17 @@
           <p>[[entry.description]]</p>
       </div>
     </a>
+
   </template>
 
   <script>
-
     class HpEntry extends Polymer.Element {
       static get is() { return 'hp-entry'; }
       static get properties() {
         return {
           entry: Object,
-          rootPath: Object
+          rootPath: String
         };
-      }
-
-      ready() {
-        super.ready();
       }
     }
 

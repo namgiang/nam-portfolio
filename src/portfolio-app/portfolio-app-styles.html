@@ -1,0 +1,63 @@
+<dom-module id="portfolio-app-styles">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .drawer-list a {
+        display: block;
+        padding: 0 5%;
+        text-decoration: none;
+        line-height: 2.5rem;
+        font-size: 1.2rem;
+        outline: none;
+      }
+
+      .drawer-list > a:first-of-type {
+        margin-top: 20%;
+      }
+
+      .drawer-list a.iron-selected {
+        color: black;
+        font-weight: bold;
+      }
+
+      .drawer-item {
+        padding: 0 5%;
+      }
+
+      .drawer-item a {
+        text-decoration: none;
+      }
+
+      hr {
+        border-style: dotted;
+        color: lightgray;
+        margin: 5%;
+      }
+
+      .app-content {
+        width: 50%;
+        margin: auto;
+      }
+
+      footer {
+        margin-top: 5%;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        .app-content {
+          width: 95%;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 850px) {
+        .app-content {
+          width: 75%;
+        }
+      }
+    </style>
+  </template>
+</dom-module>
