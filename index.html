@@ -9,7 +9,19 @@
     <base href="/">
     <!-- See https://goo.gl/OOhYW5 -->
     <link rel="manifest" href="/manifest.json">
-
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAGsNH1pIM5TG6I0aN8xs8VejTSEj2DgzA",
+        authDomain: "nam-portfolio.firebaseapp.com",
+        databaseURL: "https://nam-portfolio.firebaseio.com",
+        projectId: "nam-portfolio",
+        storageBucket: "nam-portfolio.appspot.com",
+        messagingSenderId: "222967514502"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script>
       window.Polymer = {rootPath: '/'};
     </script>

@@ -22,9 +22,17 @@
     class HpWorks extends Polymer.Element {
       static get is() { return 'hp-works'; }
 
-      ready() {
-        super.ready();
-        this.works = [
+      static get properties() {
+        return {
+          works: {
+            type: Array,
+            value: this._defaultWorks
+          }
+        };
+      }
+
+      static _defaultWorks() {
+        return [
           {
             title: 'Film Planetarium',
             description: 'A Visualization of the Relationship Between Directors and their Actors/Actresses',
@@ -42,6 +50,7 @@
           }
         ];
       }
+
     }
 
     window.customElements.define(HpWorks.is, HpWorks);

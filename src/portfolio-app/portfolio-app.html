@@ -8,9 +8,9 @@
 <link rel="import" href="../../bower_components/app-route/app-route.html">
 <link rel="import" href="./global-styles.html">
 <link rel="import" href="./portfolio-app-styles.html">
-<link rel="lazy-import" href="./app-home/app-home.html">
-<link rel="lazy-import" href="./app-entry/app-entry.html">
-<link rel="lazy-import" href="./app-view404.html">
+<link rel="import" href="./app-home/app-home.html">
+<link rel="import" href="./app-entry/app-entry.html">
+<link rel="import" href="./app-view404/app-view404.html">
 
 <dom-module id="portfolio-app">
   <template>
@@ -50,8 +50,8 @@
           fallback-selection="view404"
           role="main">
           <app-home name="home"></app-home>
-          <app-entry name={{routeData.page}}></app-entry>
           <app-view404 name="view404"></app-view404>
+          <app-entry name={{routeData.page}}></app-entry>
         </iron-pages>
       </div>
       <footer>
@@ -90,18 +90,20 @@
       }
 
       _pageChanged(page) {
-        let pageUrl = 'app-view404.html';
+        let pageUrl = 'app-view404/app-view404.html';
         if (page === 'home') {
           pageUrl = 'app-home/app-home.html';
         } else if (page ==='chi-playlist' || page === 'touching-stories' || page === 'film-planetarium') {
           pageUrl = 'app-entry/app-entry.html';
+        } else {
+          this.page = 'view404';
         }
         let resolvedPageUrl = this.resolveUrl(pageUrl);
         Polymer.importHref(
-            resolvedPageUrl,
-            null,
-            this._showPage404.bind(this),
-            true);
+          resolvedPageUrl,
+          null,
+          this._showPage404.bind(this),
+          true);
       }
 
       _showPage404() {

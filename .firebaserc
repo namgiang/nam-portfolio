@@ -1,5 +1,6 @@
 {
   "projects": {
-    "portfolio": "nam-portfolio"
+    "portfolio": "nam-portfolio",
+    "default": "nam-portfolio"
   }
 }

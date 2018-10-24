@@ -12,6 +12,10 @@
         "text": "<b>Film Planetarium</b> is a visualization of the relationship between directors and their collaborated actors/actresses. The project showcases 18 prominent directors and their works between 1950 to 2014. The movies data is obtained through <a target=\"_blank\" href=\"http://www.omdbapi.com/\">OMDB API</a>."
       },
       {
+        "type": "text",
+        "text": "View <a target=\"_blank\" href=\"https://film-planetarium.firebaseapp.com\">demo</a>."
+      },
+      {
         "type": "image",
         "source": "../../src/public/image/filmPlanetarium2.PNG",
         "text": "Overview of all major directors. Each circle represents an actor (blue) or an actress (pink)"

@@ -1,21 +1,23 @@
 {
   "hosting": {
     "public": "build/default",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "redirects": [
       {
         "source": "/",
         "destination": "/home",
-        "type": 301
+        "type" : 301
       }
     ],
     "rewrites": [
       {
-        "source": "!{/bower_components,/src}/**",
+        "source": "**/!(*.*)",
         "destination": "/index.html"
       }
-    ],
-    "headers": [
-      { "headers": [{"key": "Cache-Control", "value": "no-cache"}] }
     ]
   }
 }
